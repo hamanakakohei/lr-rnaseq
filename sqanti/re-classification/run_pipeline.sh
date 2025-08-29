@@ -19,12 +19,9 @@ ln -s data/isoforms_classification.txt results/01/0/
 for i in ${rounds[@]}; do
   PREVIOUS_RES=results/01/$((i-1))/isoforms_classification.txt
   PREVIOUS_REF=results/01/$((i-1))/isoforms.ref.gtf
-  #THIS_RES_PREFIX=${i}
   OUT_DIR=results/01/${i}/
   NEXT_TARGET=results/01/${i}/isoforms.target.gtf
   NEXT_REF=results/01/${i}/isoforms.ref.gtf
-  #PREVIOUS_RES=results/01/$(expr $i - 1)/$(expr $i - 1)_classification.txt
-  #PREVIOUS_REF=results/01/$(expr $i - 1)/$(expr $i - 1).ref.gtf
 
   mkdir -p "$OUT_DIR"
 
@@ -49,7 +46,6 @@ for i in ${rounds[@]}; do
     -l DEBUG \
     --skipORF \
     --cpus 1
-    #-o $THIS_RES_PREFIX \
 
 
   # 1-3 前回と今回の分類の対応表を作る
