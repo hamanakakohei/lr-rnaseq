@@ -80,3 +80,13 @@ scripts/03.py \
   --out_overlap_txs_bed results/03/overlap_txs.bed \
   --out_nonoverlap_txs results/03/nonoverlap_txs.tsv \
   --out_nonoverlap_txs_bed results/03/nonoverlap_txs.bed
+
+
+# 4；全ラウンドの遺伝子名の対応を合わせて一つにまとめる
+# つもりが、今は結局ラウンド0と1のみ
+mkdir -p results/04
+scripts/04.py \
+  --round1_class results/01/0/isoforms_classification.txt \
+  --round2_class results/01/1/isoforms_classification.txt \
+  --overlap_anno results/02/overlap_txs.tsv \
+  --out          results/04/tx_gene_refined.txt
